@@ -24,8 +24,22 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
+        <div class="conditions-header">
+          <h2>Conditions</h2>
+          <form class="conditions-body">
+            <label for="UpperCase">Uppercase Characters</label>
+            <input class="span-2" type="checkbox" id="pswUpperCase">
+            <label for="LowerCase">Lowercase Characters</label>
+            <input class="span-2" type="checkbox" id="pswLowerCase">
+            <label for="SpecialChar">Special Characters</label>
+            <input class="span-2" type="checkbox" id="pswSpecialChar">
+            <label for="Length">Password Length</label>
+            <input class="pswlength" type="range" id="Length" min="8" max="128" oninput="updateOutput()">
+            <p><span id="lengthOutPut"></span> characters</p>
+          </form>
+        </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button id="generate" class="btn" onclick="">Generate Password</button>
         </div>
       </div>
     </div>

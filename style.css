@@ -17,6 +17,10 @@ body {
   background-color: #f9fbfd;
 }
 
+p {
+  margin: 0;
+}
+
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
@@ -28,6 +32,10 @@ header {
   padding: 20px;
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
+}
+
+div h2 {
+  text-align: center;
 }
 
 .card {
@@ -52,6 +60,34 @@ header {
 
 .card-body {
   min-height: 100px;
+}
+
+.conditions-header::before {
+  content: " ";
+  display: block;
+  width: 100%;
+  background: #e7e9eb;
+  height: 2px;
+}
+
+.conditions-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 3rem;
+}
+
+.span-2 {
+  grid-column: span 2;
+}
+
+.conditions-body input {
+  justify-self: end;
+  transform: scale(1.3);
+}
+
+.conditions-body p {
+  justify-self: end;
 }
 
 .card-footer {

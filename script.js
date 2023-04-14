@@ -1,4 +1,12 @@
 // Assignment Code
+const slider = document.getElementById("Length");
+const output = document.getElementById("lengthOutPut")
+output.innerText = slider.value
+
+function updateOutput() {
+  output.innerText = slider.value
+}
+
 var generateBtn = document.querySelector("#generate");
 
 var specialChar = "' !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
@@ -9,7 +17,7 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 var pswLength = window.prompt("Please specify the length of your password", "8 to 128 characters long");
 
-generateBtn.addEventListener("click", pswLength)
+generateBtn.addEventListener("click", )
 
 if (pswLength > 8 && pswLength < 128) {
   console.log("Well done!");
