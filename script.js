@@ -9,28 +9,43 @@ function updateOutput() {
 
 var generateBtn = document.querySelector("#generate");
 
+
 var specialChar = "' !#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 var numbers = "1234567890";
 var lowerCase = "abcdefghijklmnopqrsruvwxyz";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+const specialCharArray = specialChar.split("");
+console.log(specialCharArray)
 
-var pswLength = window.prompt("Please specify the length of your password", "8 to 128 characters long");
+const numbersArray = numbers.split("");
+console.log(numbersArray);
 
-generateBtn.addEventListener("click", )
+const lowerCaseArray = lowerCase.split("");
+console.log(lowerCaseArray);
 
-if (pswLength > 8 && pswLength < 128) {
-  console.log("Well done!");
-} else {
-  pswLength = alert("Password must be between 8 to 128 characters long");
+const upperCaseArray = upperCase.split("");
+console.log(upperCaseArray)
+
+
+
+
+
+
+var PSW = specialCharArray.concat(numbersArray, lowerCaseArray, upperCaseArray);
+console.log(PSW);
+
+
+
+function generatePassword(useSpecial, useNumbers, useLower, useUpper, pswLength) {
+
 }
-
-
-
-
 
 // Write password to the #password input
 function writePassword() {
+  var useSpecial = document.getElementById("pswSpecialChar")
+  var useNumbers = document
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
