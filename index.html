@@ -27,14 +27,16 @@
         <div class="conditions-header">
           <h2>Conditions</h2>
           <form class="conditions-body">
-            <label for="UpperCase">Uppercase Characters</label>
+            <label for="pswUpperCase">Uppercase Characters</label>
             <input class="span-2" type="checkbox" id="pswUpperCase">
-            <label for="LowerCase">Lowercase Characters</label>
+            <label for="pswLowerCase">Lowercase Characters</label>
             <input class="span-2" type="checkbox" id="pswLowerCase">
-            <label for="SpecialChar">Special Characters</label>
+            <label for="pswSpecialChar">Special Characters</label>
             <input class="span-2" type="checkbox" id="pswSpecialChar">
+            <label for="pswNumbers">Numbers</label>
+            <input class="span-2" type="checkbox" id="pswNumbers">
             <label for="Length">Password Length</label>
-            <input class="pswlength" type="range" id="Length" min="8" max="128" oninput="updateOutput()">
+            <input class="pswlength" type="range" id="length" min="8" max="128" oninput="updateOutput()">
             <p><span id="lengthOutPut"></span> characters</p>
           </form>
         </div>
