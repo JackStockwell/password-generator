@@ -7,63 +7,67 @@ function updateOutput() {
   output.innerText = slider.value
 }
 
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.getElementById("generate");
 
+// Variables of possible characters.
 
 var specialChar = "' !#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("");
 var numbers = "1234567890".split("");
 var lowerCase = "abcdefghijklmnopqrsruvwxyz".split("");
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
+// Generate Password function
+
 function generatePassword(useSpecial, useNumbers, useLower, useUpper, length) {
-  // Boolean check on parameters, an if statement
+
+  // Boolean check on parameters, true statements are complied to an array pswResult.
+
   var pswResult = []
   
   if (useSpecial === true) {
-    pswResult = pswResult.concat(specialChar)
+    pswResult = pswResult.concat(specialChar);
   }
 
   if (useNumbers === true) {
-    pswResult = pswResult.concat(numbers)
+    pswResult = pswResult.concat(numbers);
   }
   
   if (useLower === true) {
-    pswResult = pswResult.concat(lowerCase)
+    pswResult = pswResult.concat(lowerCase);
   }
 
   if (useUpper === true) {
-    pswResult = pswResult.concat(upperCase)
+    pswResult = pswResult.concat(upperCase);
   }
 
-
-  console.log(pswResult)
+  // Ensure the if statements are running correctly.
+  // console.log(pswResult)
   
+  // Empty String
+
   var pswString = ""
+
+  // For loop, runs the amount of times of i which will keep running until it reaches the length selected by user.
+
   for (var i = 0; i < length; i++) {
-    pswString += "1"
+    // pswString is added upon by an index of pswResult array, the index is calculated using the randomSelector function which has the parameters of 0 and the pswResult array length.
+    pswString += pswResult[randomSelector(0, pswResult.length)];
   }
   return pswString;
+}
 
+// Math.random function that due to Math.floor will always output a whole integer
 
-  // Have i be the length of the password, everytime i increases add a new character to the a string.
-
-
-  const specialCharArray = specialChar.split("");
-  console.log(specialCharArray)
-
-  const numbersArray = numbers.split("");
-  console.log(numbersArray);
-
-  const lowerCaseArray = lowerCase.split("");
-  console.log(lowerCaseArray);
-
-  const upperCaseArray = upperCase.split("");
-  console.log(upperCaseArray)
+function randomSelector(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 
 
-// Write password to the #password input
+/* 
+The writePassword function will write a password by assigning variables used in the form on the website
+it runs the generatePassword function with these parameters.
+*/
 function writePassword() {
 
   var useSpecialElement = document.getElementById("pswSpecialChar")
@@ -73,25 +77,11 @@ function writePassword() {
   var lengthElement = document.getElementById("length")
  
   var password = generatePassword(useSpecialElement.checked, useNumbersElement.checked, useLowerElement.checked, useUpperElement.checked, lengthElement.value)
-  var passwordText = document.querySelector("#password");
+  var passwordText = document.getElementById("password");
 
   passwordText.value = password;
 
 }
 
-
-
-
-
-
-var n = 5
-
-function printA(b) {
-  console.log(b)
-}
-
-printA(10)
-printA(n)
 // Add event listener to generate button
  generateBtn.addEventListener("click", writePassword);
-
