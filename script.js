@@ -50,7 +50,7 @@ function generatePassword(useSpecial, useNumbers, useLower, useUpper, length) {
   // For loop, runs the amount of times of i which will keep running until it reaches the length selected by user.
 
   for (var i = 0; i < length; i++) {
-    // pswString is added upon by an index of pswResult array, the index is calculated using the randomSelector function which has the parameters of 0 and the pswResult array length.
+  // pswString is added upon by an index of pswResult array, the index is calculated using the randomSelector function which has the parameters of 0 and the pswResult array length.
     pswString += pswResult[randomSelector(0, pswResult.length)];
   }
   return pswString;
