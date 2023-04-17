@@ -62,8 +62,6 @@ function randomSelector(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-
-
 /* 
 The writePassword function will write a password by assigning variables used in the form on the website
 it runs the generatePassword function with these parameters.
@@ -75,11 +73,24 @@ function writePassword() {
   var useLowerElement = document.getElementById("pswLowerCase")
   var useUpperElement = document.getElementById("pswUpperCase")
   var lengthElement = document.getElementById("length")
- 
+
   var password = generatePassword(useSpecialElement.checked, useNumbersElement.checked, useLowerElement.checked, useUpperElement.checked, lengthElement.value)
   var passwordText = document.getElementById("password");
 
+  //
+
+  const checkBox = (useSpecialElement.checked || useNumbersElement.checked || useLowerElement.checked || useUpperElement.checked)
+
+  function pswUndefined(cBox) {
+    if (cBox === false) {
+      password = ("Please select a conditional!")
+    }
+  }
+
+  pswUndefined(checkBox)
+  
   passwordText.value = password;
+  
 
 }
 
