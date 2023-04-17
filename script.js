@@ -59,7 +59,7 @@ function generatePassword(useSpecial, useNumbers, useLower, useUpper, length) {
 // Math.random function that due to Math.floor will always output a whole integer
 
 function randomSelector(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
+  return Math.floor(Math.random() * (max - min));
 }
 
 /* 
