@@ -77,7 +77,7 @@ function writePassword() {
   var password = generatePassword(useSpecialElement.checked, useNumbersElement.checked, useLowerElement.checked, useUpperElement.checked, lengthElement.value)
   var passwordText = document.getElementById("password");
 
-  //
+  //Credential Validation - If all values of checkBox are false, will change password to be text in pswUndefined function.
 
   const checkBox = (useSpecialElement.checked || useNumbersElement.checked || useLowerElement.checked || useUpperElement.checked)
 
@@ -90,8 +90,6 @@ function writePassword() {
   pswUndefined(checkBox)
   
   passwordText.value = password;
-  
-
 }
 
 // Add event listener to generate button
