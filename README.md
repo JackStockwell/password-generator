@@ -16,6 +16,8 @@ N/A
 
 When the website is loaded, you will be displayed a text box with some tickboxes underneath and a slider. Use the checkboxes to select what credentials you would like to be used when generating your password. The slider at the bottom is the amount of characters used in the password.
 
+The site can be found [here](https://jackstockwell.github.io/password-generator/)
+
 ## Credits 
 
 - [Mozilla web doc on Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) - Used to randomly pick a number from the array.
